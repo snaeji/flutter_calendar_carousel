@@ -1,5 +1,8 @@
 library flutter_calendar_dooboo;
 
+import 'package:intl/intl.dart';
+import 'package:intl/date_symbol_data_local.dart';
+
 /// A Calculator.
 import 'package:intl/intl.dart' show DateFormat;
 import 'package:flutter/material.dart';
@@ -128,6 +131,8 @@ class _CalendarState extends State<CalendarCarousel> {
   @override
   initState() {
     super.initState();
+    Intl.defaultLocale = 'is_IS';
+    initializeDateFormatting('is');
 
     /// setup pageController
     _controller = PageController(

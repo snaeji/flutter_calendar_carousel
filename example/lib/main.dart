@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
         // counter didn't reset back to zero; the application is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: new MyHomePage(title: 'Flutter Calendar Carousel Exmaple'),
+      home: new MyHomePage(title: 'Veljið dagsetningu'),
     );
   }
 }
@@ -44,7 +44,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  DateTime _currentDate = DateTime(2018, 8, 1);
+  DateTime _currentDate = DateTime.now();
   List<DateTime> _markedDate = [DateTime(2018, 9, 20), DateTime(2018, 10, 11)];
 
   @override
