@@ -9,17 +9,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return new MaterialApp(
       title: 'dooboolab flutter calendar',
-      theme: new ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or press Run > Flutter Hot Reload in IntelliJ). Notice that the
-        // counter didn't reset back to zero; the application is not restarted.
-        primarySwatch: Colors.blue,
-      ),
+      theme: ThemeData.dark(),
       home: new MyHomePage(title: 'Veljið dagsetningu'),
     );
   }
@@ -60,7 +50,7 @@ class _MyHomePageState extends State<MyHomePage> {
             this.setState(() => _currentDate = date);
           },
           weekendTextStyle: TextStyle(
-            color: Colors.red,
+            color: Colors.white,
           ),
           thisMonthDayBorderColor: Colors.grey,
 //          weekDays: null, /// for pass null when you do not want to render weekDays

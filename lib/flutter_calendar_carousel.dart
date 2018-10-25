@@ -21,7 +21,7 @@ class CalendarCarousel extends StatefulWidget {
     fontSize: 14.0,
   );
   final TextStyle defaultDaysTextStyle = TextStyle(
-    color: Colors.black,
+    color: Colors.white70,
     fontSize: 14.0,
   );
   final TextStyle defaultTodayTextStyle = TextStyle(
@@ -33,11 +33,11 @@ class CalendarCarousel extends StatefulWidget {
     fontSize: 14.0,
   );
   final TextStyle defaultWeekdayTextStyle = TextStyle(
-    color: Colors.deepOrange,
+    color: Colors.white,
     fontSize: 14.0,
   );
   final TextStyle defaultWeekendTextStyle = TextStyle(
-    color: Colors.pinkAccent,
+    color: Colors.blue,
     fontSize: 14.0,
   );
   final Widget defaultMarkedDateWidget = Positioned(
