@@ -81,7 +81,7 @@ class CalendarCarousel extends StatefulWidget {
   final EdgeInsets weekDayMargin;
 
   CalendarCarousel({
-    this.weekDays = const ['Sun', 'Mon', 'Tue', 'Wed', 'Thur', 'Fri', 'Sat'],
+    this.weekDays = const ['sun.', 'mán.', 'þri.', 'mið.', 'fim.', 'fös.', 'lau.'],
     this.viewportFraction = 1.0,
     this.prevDaysTextStyle,
     this.daysTextStyle,
