@@ -403,9 +403,9 @@ class _CalendarState extends State<CalendarCarousel> {
     } else if (page == 1) {
       return;
     } else {
-      print('page: $page');
+      // print('page: $page');
       List<DateTime> dates = this._dates;
-      print('dateLength: ${dates.length}');
+      // print('dateLength: ${dates.length}');
       if (page == 0) {
         dates[2] = DateTime(dates[0].year, dates[0].month + 1, 1);
         dates[1] = DateTime(dates[0].year, dates[0].month, 1);
@@ -424,15 +424,15 @@ class _CalendarState extends State<CalendarCarousel> {
         this._dates = dates;
       });
 
-      print('dates');
-      print(this._dates);
+      // print('dates');
+      // print(this._dates);
 
       _controller.animateToPage(page,
           duration: Duration(milliseconds: 1), curve: Threshold(0.0));
     }
 
-    print('startWeekDay: $_startWeekday');
-    print('endWeekDay: $_endWeekday');
+    // print('startWeekDay: $_startWeekday');
+    // print('endWeekDay: $_endWeekday');
   }
 
   List<Widget> _renderWeekDays() {
