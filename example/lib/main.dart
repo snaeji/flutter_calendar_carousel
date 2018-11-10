@@ -44,7 +44,7 @@ class _MyHomePageState extends State<MyHomePage> {
         title: new Text(widget.title),
       ),
       body: Container(
-        margin: EdgeInsets.symmetric(horizontal: 16.0),
+        margin: EdgeInsets.symmetric(horizontal: 30.0),
         child: CalendarCarousel(
           onDayPressed: (DateTime date) {
             this.setState(() => _currentDate = date);
@@ -58,7 +58,7 @@ class _MyHomePageState extends State<MyHomePage> {
 //            child: Text('Custom Header'),
 //          ),
           markedDates: _markedDate,
-          height: 420.0,
+          height: 410.0,
           selectedDateTime: _currentDate,
           daysHaveCircularBorder: false, /// null for not rendering any border, true for circular border, false for rectangular border
         ),
