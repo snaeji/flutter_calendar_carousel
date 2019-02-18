@@ -3,6 +3,11 @@ library flutter_calendar_dooboo;
 import 'dart:async';
 
 import 'package:date_utils/date_utils.dart';
+import 'package:intl/intl.dart';
+import 'package:intl/date_symbol_data_local.dart';
+
+/// A Calculator.
+import 'package:intl/intl.dart' show DateFormat;
 import 'package:flutter/material.dart';
 import 'package:flutter_calendar_carousel/classes/event_list.dart';
 import 'package:flutter_calendar_carousel/src/default_styles.dart';
@@ -13,6 +18,50 @@ typedef MarkedDateIconBuilder<T> = Widget Function(T event);
 
 class CalendarCarousel<T> extends StatefulWidget {
 
+class CalendarCarousel extends StatefulWidget {
+  final TextStyle defaultHeaderTextStyle = TextStyle(
+    fontSize: 20.0,
+    color: Colors.blue,
+  );
+  final TextStyle defaultPrevDaysTextStyle = TextStyle(
+    color: Colors.grey,
+    fontSize: 14.0,
+  );
+  final TextStyle defaultNextDaysTextStyle = TextStyle(
+    color: Colors.grey,
+    fontSize: 14.0,
+  );
+  final TextStyle defaultDaysTextStyle = TextStyle(
+    color: Colors.white70,
+    fontSize: 14.0,
+  );
+  final TextStyle defaultTodayTextStyle = TextStyle(
+    color: Colors.white,
+    fontSize: 14.0,
+  );
+  final TextStyle defaultSelectedDayTextStyle = TextStyle(
+    color: Colors.white,
+    fontSize: 14.0,
+  );
+  final TextStyle defaultWeekdayTextStyle = TextStyle(
+    color: Colors.white,
+    fontSize: 14.0,
+  );
+  final TextStyle defaultWeekendTextStyle = TextStyle(
+    color: Colors.blue,
+    fontSize: 14.0,
+  );
+  final Widget defaultMarkedDateWidget = Positioned(
+    child: Container(
+      color: Colors.blueAccent,
+      height: 4.0,
+      width: 4.0,
+    ),
+    bottom: 4.0,
+    left: 18.0,
+  );
+
+  final List<String> weekDays;
   final double viewportFraction;
   final TextStyle prevDaysTextStyle;
   final TextStyle daysTextStyle;
@@ -72,6 +121,7 @@ class CalendarCarousel<T> extends StatefulWidget {
   final bool staticSixWeekFormat;
 
   CalendarCarousel({
+    this.weekDays = const ['sun.', 'mán.', 'þri.', 'mið.', 'fim.', 'fös.', 'lau.'],
     this.viewportFraction = 1.0,
     this.prevDaysTextStyle,
     this.daysTextStyle,
@@ -84,12 +134,12 @@ class CalendarCarousel<T> extends StatefulWidget {
     this.width = double.infinity,
     this.todayTextStyle,
     this.dayButtonColor = Colors.transparent,
-    this.todayBorderColor = Colors.red,
-    this.todayButtonColor = Colors.red,
+    this.todayBorderColor = Colors.blue,
+    this.todayButtonColor = Colors.blue,
     this.selectedDateTime,
     this.selectedDayTextStyle,
-    this.selectedDayBorderColor = Colors.green,
-    this.selectedDayButtonColor = Colors.green,
+    this.selectedDayBorderColor = Colors.red,
+    this.selectedDayButtonColor = Colors.red,
     this.daysHaveCircularBorder,
     this.onDayPressed,
     this.weekdayTextStyle,
@@ -162,7 +212,8 @@ class _CalendarState<T> extends State<CalendarCarousel<T>> {
   @override
   initState() {
     super.initState();
-    initializeDateFormatting();
+    Intl.defaultLocale = 'is_IS';
+    initializeDateFormatting('is');
 
     /// setup pageController
     _controller = PageController(
